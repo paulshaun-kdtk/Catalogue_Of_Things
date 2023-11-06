@@ -1,4 +1,4 @@
-## Copyright 2023, [Shaun Kudzai, Binyam Olango]
+## Copyright 2023, [Shaun Kudzai, Eugene Olango]
 
 ###### Please delete this line and the next one
 ###### APP TYPE can be a webpage/website, a web app, a software and so on
