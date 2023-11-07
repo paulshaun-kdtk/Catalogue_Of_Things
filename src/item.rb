@@ -11,7 +11,7 @@ class Items
   private
 
   def can_be_archived?
-    nil unless @publish_date > 10
+    false unless @publish_date > 10
   end
 
   public
