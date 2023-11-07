@@ -1,7 +1,7 @@
 class Items
   attr_accessor :genre, :author, :source, :label
 
-  def initialize(publish_date)
+  def initialize(publish_date) # removed archived: true as it was not used in the function
     @id = Random.rand(1..1000)
     @publish_date = publish_date
     @archived = true
