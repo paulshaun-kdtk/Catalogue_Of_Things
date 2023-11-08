@@ -1,3 +1,5 @@
+require_relative './item'
+
 class Book < Items
   def initialize(publish_date, publisher, cover_state)
     super(publish_date)
