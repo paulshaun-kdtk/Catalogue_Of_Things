@@ -19,6 +19,7 @@ class AppDisplay
 
   def handle_choice(choice, books)
     case choice
+    when 1 then list_all_books(books)
     when 9 then add_book(books)
     when 12 then exit
     else

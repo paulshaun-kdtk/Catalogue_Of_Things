@@ -16,3 +16,9 @@ def add_book(books)
 
   book
 end
+
+def list_all_books(books)
+  books.each do |book|
+    puts "publish date: #{book.publish_date}, publisher: #{book.publisher}, cover state: #{book.cover_state}"
+  end
+end
