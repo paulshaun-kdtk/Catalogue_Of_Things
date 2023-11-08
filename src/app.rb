@@ -1,5 +1,5 @@
-require_relative './book'
-require_relative './label'
+require_relative 'book'
+require_relative 'label'
 
 def add_book(labels, books)
   puts 'enter publish date'
