@@ -12,8 +12,7 @@ class Book < Items
   end
 
   def can_be_archived?
-    parent_archive = Items.new
-    false unless @cover_state == 'bad' || parent_archive.move_to_archive == true
+    super || @cover_state == 'bad'
   end
 
   # Serialize the object to a hash
