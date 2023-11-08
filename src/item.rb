@@ -20,3 +20,5 @@ class Items
     can_be_archived?
   end
 end
+
+#SUGGESTION consider moving item file into classes folder
