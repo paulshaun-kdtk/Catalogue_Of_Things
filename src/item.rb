@@ -12,7 +12,7 @@ class Items
   private
 
   def can_be_archived?
-    false unless @publish_date > 10
+    @publish_date < '2013-01-01'
   end
 
   public
