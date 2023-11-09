@@ -92,13 +92,13 @@ def add_music_album(music_albums)
 
   publish_date = nil
   loop do
-    print 'Enter the publish date (1-30): '
-    publish_date_input = gets.chomp.to_i
-    if (1..30).include?(publish_date_input)
+    print 'Enter the publish date (YYYY-MM-DD): '
+    publish_date_input = gets.chomp
+    if /\A\d{4}-\d{2}-\d{2}\z/.match(publish_date_input)
       publish_date = publish_date_input
       break
     else
-      puts 'Invalid input. Please enter a number between 1 and 30.'
+      puts 'Invalid input. Please enter the date in the format YYYY-MM-DD.'
     end
   end
 

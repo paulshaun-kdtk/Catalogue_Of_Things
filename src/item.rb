@@ -4,13 +4,14 @@ class Items
   def initialize(publish_date)
     @id = Random.rand(1..1000)
     @publish_date = publish_date
-    # @archived = true
+    @archived = true
+    @label = nil
   end
 
   private
 
   def can_be_archived?
-    @publish_date > 10
+    @publish_date < '2013-01-01'
   end
 
   public

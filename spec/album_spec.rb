@@ -6,6 +6,9 @@ RSpec.describe MusicAlbum do
 
   it 'can be archived' do
     expect(music_album.can_be_archived?).to be true
+
+    music_album.on_spotify = false
+    expect(music_album.can_be_archived?).to be true
   end
 
   # it 'to_json' do
