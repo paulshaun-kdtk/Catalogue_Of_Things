@@ -1,3 +1,5 @@
+require_relative 'app'
+
 class AppDisplay
   def options
     puts 'Options:'
@@ -15,8 +17,11 @@ class AppDisplay
     puts '12. Add a game'
   end
 
-  def handle_choice(choice)
+  def handle_choice(choice, labels, books)
     case choice
+    when 1 then list_all_books
+    when 6 then list_all_labels
+    when 9 then add_book(labels, books)
     when 12 then exit
     else
       puts 'invalid input'
@@ -25,11 +30,14 @@ class AppDisplay
 
   def main
     loop do
+      books = load_books
+      labels = load_labels
+
       options
 
       choice = gets.chomp.to_i
 
-      handle_choice(choice)
+      handle_choice(choice, labels, books)
     end
   end
 end
