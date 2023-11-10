@@ -5,7 +5,7 @@ require 'json'
 genres = []
 music_albums = []
 
-#data load
+# data load
 
 def load_genres
   file_path = 'db/json/genres.json'
@@ -16,14 +16,13 @@ def load_genres
 
     genres = genres_data.map { |data| Genre.new(data['name']) }
 
-    puts "Genres loaded successfully."
-    return genres
+    puts 'Genres loaded successfully.'
+    genres
   else
-    puts "Genres file not found. Returning an empty array."
-    return []
+    puts 'Genres file not found. Returning an empty array.'
+    []
   end
 end
-
 
 def load_albums
   if File.exist?('db/json/albums.json')
@@ -67,7 +66,7 @@ def add_genre(genres)
   new_genre = Genre.new(genre_name)
   genres << new_genre
   puts "Genre '#{genre_name}' added successfully."
-  return genre_name
+  genre_name
 end
 
 # list albums
@@ -106,7 +105,7 @@ def add_music_album(music_albums)
   loop do
     print 'Is it on Spotify? (true/false): '
     on_spotify_input = gets.chomp.downcase
-    if on_spotify_input == 'true' || on_spotify_input == 'false'
+    if %w[true false].include?(on_spotify_input)
       on_spotify = on_spotify_input == 'true'
       break
     else
@@ -123,7 +122,7 @@ end
 def save_genres(genres)
   File.open('db/json/genres.json', 'w') do |file|
     file.puts(JSON.generate(genres))
-    puts "Saved successfully."
+    puts 'Saved successfully.'
     puts "Genres: #{genres}"
   end
 end
@@ -131,12 +130,10 @@ end
 def save_albums(music_albums)
   File.open('db/json/albums.json', 'w') do |file|
     file.puts(JSON.generate(music_albums))
-    puts "Saved successfully."
+    puts 'Saved successfully.'
     puts "Albums: #{music_albums}"
   end
 end
-
-
 
 # Main menu to be refactored
 
@@ -165,3 +162,4 @@ loop do
     puts 'Invalid option. Please choose a valid option.'
   end
 end
+

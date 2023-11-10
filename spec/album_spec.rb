@@ -1,17 +1,15 @@
 require_relative '../src/classes/genre'
 require_relative '../src/classes/album'
 
-RSpec.describe MusicAlbum do
-  let(:music_album) { described_class.new("Album Title", "Publisher", true, 15) }
+describe MusicAlbum do
+  let(:album) { MusicAlbum.new('Title', 'Publisher', true, '2012-12-31') }
 
-  it 'can be archived' do
-    expect(music_album.can_be_archived?).to be true
-
-    music_album.on_spotify = false
-    expect(music_album.can_be_archived?).to be true
+  it 'can be archived if publish date is before 2013-01-01' do
+    expect(album.can_be_archived?).to be(true)
   end
 
-  # it 'to_json' do
-  #   # Add tests for to_json method if needed
-  # end
+  it 'cannot be archived if publish date is on or after 2013-01-01' do
+    album.publish_date = '2013-01-01'
+    expect(album.can_be_archived?).to be(false)
+  end
 end

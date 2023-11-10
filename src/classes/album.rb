@@ -11,7 +11,7 @@ class MusicAlbum < Items
   end
 
   def can_be_archived?
-    super() && @publish_date > 10
+    super() && @publish_date < '2013-01-01'
   end
 
   def to_json(*options)
