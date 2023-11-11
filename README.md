@@ -1,13 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
 
- <!-- LOGO -->
-
-  <img src="./assets/My Logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-<!-- MAIN HEADING -->
-
   <h3><b>Eugene & Shaun Catalogue of things</b></h3>
 
 </div>
@@ -40,7 +33,7 @@
 # 📖 [Eugene & Shaun Catalogue of things] <a name="about-project"></a>
 
 
-**Catalogue of thing** is a console app intended to help users store and keep track of their inventory.
+**Catalogue of things** is a console app intended to help users store and keep track of their inventory.
 
 ## 🛠 Built With <a name="built-with"></a>
 
