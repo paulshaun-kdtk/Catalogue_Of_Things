@@ -1,13 +1,6 @@
 <a name="readme-top"></a>
 <div align="center">
 
- <!-- LOGO -->
-
-  <img src="./assets/My Logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-<!-- MAIN HEADING -->
-
   <h3><b>Eugene & Shaun Catalogue of things</b></h3>
 
 </div>
