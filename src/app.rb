@@ -2,7 +2,7 @@ require_relative 'book'
 require_relative 'label'
 
 def add_book(labels, books)
-  puts 'enter publish date'
+  puts "enter publish date ('YYYY-MM-DD')"
   publish_date = gets.chomp
 
   puts 'Enter publisher'
@@ -22,7 +22,7 @@ def add_book(labels, books)
   book = Book.new(publish_date, publisher, cover_state)
   label = Label.new(title, color)
 
-  labeled = label.add_item(book)
+  label.add_item(book)
   # puts "Label: #{label.title} - #{label.color}"
   # puts "Book: #{book.inspect}"
 
@@ -30,7 +30,8 @@ def add_book(labels, books)
   books << book
 
   save_books(books)
-  save_labels(labeled)
+  save_labels(labels)
+  puts 'Book added successfully'
   book
 end
 
