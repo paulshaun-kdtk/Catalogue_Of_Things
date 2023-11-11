@@ -13,7 +13,7 @@ class Author
     item.author = self
   end
 
-  def to_json
+  def to_json(*_args)
     {
       name: @name,
       items: @items.map(&:to_json)
@@ -24,11 +24,11 @@ class Author
     data = JSON.parse(json_str)
     author = Author.new(data['name'])
     data['items'].each do |item_data|
-      if item_data['last_played_at']
-        item = Game.new(item_data['publish_date'], item_data['last_played_at'])
-      else
-        item = Items.new(item_data['publish_date'])
-      end
+      item = if item_data['last_played_at']
+               Game.new(item_data['publish_date'], item_data['last_played_at'])
+             else
+               Items.new(item_data['publish_date'])
+             end
       item.id = item_data['id']
       item.archived = item_data['archived']
       item.label = item_data['label']

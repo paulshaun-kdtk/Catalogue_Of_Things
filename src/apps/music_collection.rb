@@ -78,39 +78,46 @@ end
 # add music album function
 
 def add_music_album
-  puts 'Enter the title of the new album:'
-  title = gets.chomp
-  puts 'Enter the publisher:'
-  publisher = gets.chomp
-
-  publish_date = nil
-  loop do
-    print 'Enter the publish date (YYYY-MM-DD): '
-    publish_date_input = gets.chomp
-    if /\A\d{4}-\d{2}-\d{2}\z/.match(publish_date_input)
-      publish_date = publish_date_input
-      break
-    else
-      puts 'Invalid input. Please enter the date in the format YYYY-MM-DD.'
-    end
-  end
-
-  on_spotify = nil
-  loop do
-    print 'Is it on Spotify? (true/false): '
-    on_spotify_input = gets.chomp.downcase
-    if %w[true false].include?(on_spotify_input)
-      on_spotify = on_spotify_input == 'true'
-      break
-    else
-      puts 'Invalid input. Please enter "true" or "false".'
-    end
-  end
+  title = album_title
+  publisher = album_publisher
+  publish_date = publish_date_get
+  on_spotify = spotify_status
 
   new_album = MusicAlbum.new(title, publisher, on_spotify, publish_date)
   $music_albums << new_album
+
   puts "Album '#{title}' by #{publisher} added successfully."
   save_albums
+end
+
+def album_title
+  puts 'Enter the title of the new album:'
+  gets.chomp
+end
+
+def album_publisher
+  puts 'Enter the publisher:'
+  gets.chomp
+end
+
+def publish_date_get
+  loop do
+    print 'Enter the publish date (YYYY-MM-DD): '
+    publish_date_input = gets.chomp
+    return publish_date_input if /\A\d{4}-\d{2}-\d{2}\z/.match(publish_date_input)
+
+    puts 'Invalid input. Please enter the date in the format YYYY-MM-DD.'
+  end
+end
+
+def spotify_status
+  loop do
+    print 'Is it on Spotify? (true/false): '
+    on_spotify_input = gets.chomp.downcase
+    return on_spotify_input == 'true' if %w[true false].include?(on_spotify_input)
+
+    puts 'Invalid input. Please enter "true" or "false".'
+  end
 end
 
 def save_genres

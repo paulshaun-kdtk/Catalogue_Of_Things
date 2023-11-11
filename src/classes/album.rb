@@ -8,7 +8,6 @@ class MusicAlbum < Items
     @title = title
     @publisher = publisher
     @on_spotify = on_spotify
- 
   end
 
   def can_be_archived?

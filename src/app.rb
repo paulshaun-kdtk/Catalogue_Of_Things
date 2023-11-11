@@ -22,7 +22,7 @@ def add_book(labels, books)
   book = Book.new(publish_date, publisher, cover_state)
   label = Label.new(title, color)
 
-  labeled = label.add_item(book)
+  label.add_item(book)
   # puts "Label: #{label.title} - #{label.color}"
   # puts "Book: #{book.inspect}"
 
@@ -31,7 +31,7 @@ def add_book(labels, books)
 
   save_books(books)
   save_labels(labels)
-  puts "Book added successfully"
+  puts 'Book added successfully'
   book
 end
 

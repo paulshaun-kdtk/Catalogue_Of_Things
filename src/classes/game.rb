@@ -12,7 +12,7 @@ class Game < Items
     super && last_played_old?
   end
 
-  def to_json
+  def to_json(*_args)
     {
       id: @id,
       publish_date: @publish_date,
@@ -26,6 +26,6 @@ class Game < Items
 
   def last_played_old?
     last_played_date = Date.parse(@last_played_at)
-    last_played_date < (Date.today - 365 * 2)
+    last_played_date < (Date.today - (365 * 2))
   end
 end
