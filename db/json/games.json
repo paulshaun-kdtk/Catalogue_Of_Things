@@ -5,5 +5,26 @@
     "label": "Yuri",
     "archived": true,
     "id": 815
+  },
+  {
+    "publish_date": "2004-09-09",
+    "last_played_at": "2005-09-09",
+    "label": "gta",
+    "archived": true,
+    "id": 889
+  },
+  {
+    "publish_date": "0000-00-00",
+    "last_played_at": "0000-01-01",
+    "label": "true",
+    "archived": true,
+    "id": 272
+  },
+  {
+    "publish_date": "0000-00-00",
+    "last_played_at": "00-01-01",
+    "label": "true",
+    "archived": true,
+    "id": 154
   }
 ]

@@ -30,7 +30,7 @@ class Label
 end
 
 def save_labels(labels)
-  File.write('db/labels.json', JSON.generate(labels.map(&:label_to_json)))
+  File.write('storage/labels.json', JSON.generate(labels.map(&:label_to_json)))
 end
 
 def load_labels

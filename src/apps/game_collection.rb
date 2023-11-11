@@ -17,21 +17,13 @@ def initialize_json_files
   create_json_file_if_not_exists(GAMES_FILE)
 end
 
-def display_menu
-  puts "\nMenu:"
-  puts "1. List Games"
-  puts "2. List Authors"
-  puts "3. Add Game"
-  puts "4. Exit"
-end
-
 def list_games
   games_data = JSON.parse(File.read(GAMES_FILE))
   puts "\nList of Games:"
   games_data.each { |game_data| puts "#{game_data['id']}. #{game_data['label'] || 'Untitled'}" }
 end
 
-# to be edited to fetch from books logic
+
 def list_authors
   authors_data = JSON.parse(File.read(AUTHORS_FILE))
   puts "\nList of Authors:"
@@ -63,25 +55,4 @@ def add_game
   puts "Game added successfully!"
 end
 
-# Create JSON files if not exists
 initialize_json_files
-
-loop do
-  display_menu
-  print "Enter your choice: "
-  choice = gets.chomp.to_i
-
-  case choice
-  when 1
-    list_games
-  when 2
-    list_authors
-  when 3
-    add_game
-  when 4
-    puts "Exiting."
-    break
-  else
-    puts "Invalid choice. Please try again."
-  end
-end
