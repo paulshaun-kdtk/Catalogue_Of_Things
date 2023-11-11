@@ -33,7 +33,7 @@
 # 📖 [Eugene & Shaun Catalogue of things] <a name="about-project"></a>
 
 
-**Catalogue of thing** is a console app intended to help users store and keep track of their inventory.
+**Catalogue of things** is a console app intended to help users store and keep track of their inventory.
 
 ## 🛠 Built With <a name="built-with"></a>
 
